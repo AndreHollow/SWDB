@@ -5,69 +5,65 @@ import NavBar from './NavBar';
 import Content from './Content';
 import './App.css';
 
-let h = new Headers();
-h.append('Accept','application/json');
-let req = new Request('https://swapi.co/api/people/', {
-    method: 'GET',
-    headers: h,
-    mode: 'cors',
-});
-
 class App extends Component {
   constructor(props){
     super(props);
     this.state = {
-      isLoaded: false,
-      people: {
-        pageNumber: [],
-        data: [],
-      },
+      categoryChosen: '',
+      categoryList: [
+        'People',
+        'Planets',
+        'Species', 
+        'Starships', 
+        'Vehicles'
+      ],
+      searchValue: '',
     }
   }
 
   componentDidMount(){
-    fetch(req)
-      .then(
-        res => {
-          if(res.ok)
-            return res.json();
-          else 
-            throw new Error("Owi6o4ka");
-        }
-      )
-      .then(json => {
-        this.setState({
-          isLoaded: true,
-          people: json.results,
-        })
+    
+  }
+
+  handleClick = (category) => {
+    this.setState({
+      categoryChosen: category
     });
   }
 
+  handleSubmit = (e, val) => {
+    e.preventDefault();
+    this.setState({
+      searchValue: val
+    })
+  }
+
+  handleSearchBar = (searchStatus) => {
+    if(!searchStatus){
+      this.setState({
+        searchValue: ''
+      })
+    }
+  }
+
+
   render() {
-    // if(!this.state.isLoaded){
-    //   return(
-    //     <div>Don't loaded</div>
-    //   )  
-    // }
-    // else{
-    //   return (
-    //     <div className = 'App'>
-    //       <ul>
-    //         {this.state.people.map((i) => (
-    //           <li key = {i.name}>
-    //             {i.name}
-    //           </li>)
-    //         )}
-    //       </ul>
-    //     </div>
-        
-    //   )
-    // }
     return (
       <div className="App">
         <Logo />
-        <NavBar />
-        <Content contentType = {''}/>
+        <NavBar 
+          className = 'navBar'
+          categoryList = {this.state.categoryList} 
+          categoryChosen = {this.state.categoryChosen} 
+          onClick = {this.handleClick}
+          onSubmit = {this.handleSubmit}
+        />
+        <Content 
+          className = 'content'
+          categoryChosen = {this.state.categoryChosen}
+          searchValue = {this.state.searchValue}
+          handleSearchBar = {this.handleSearchBar}
+        />
         <BottomLinks />
       </div>
     );
