@@ -1,4 +1,3 @@
-//Films People Planets Starships Creatures and searchbar. change handlers that said to rerender and change content.
 import React, { Component } from 'react';
 import './NavBar.css';
 

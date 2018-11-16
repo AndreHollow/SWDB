@@ -1,0 +1,39 @@
+.logo-header {
+  background-color: #282c34;
+  min-height: 20vh;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.logo-logo {
+  animation: logo-spin infinite 20s linear;
+  height: 15vh;
+  margin: 20px;
+}
+
+.logo-info{
+  margin: 15px;
+}
+
+.logo-name{
+  margin: 0;
+  color: #9d9d9d;
+}
+
+.logo-link {
+  color: #921816;
+  text-decoration: none;
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

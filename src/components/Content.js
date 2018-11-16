@@ -1,5 +1,5 @@
-//if category chosen then return content of this category else return category list
 import React, { Component } from 'react';
+import Item from './Item'
 import './Content.css';
 import logo1 from '../icons/if_lightsaber-luke-anh_1626625.svg';
 import logo2 from '../icons/if_lightsaber-luke-rotj_1626626.svg';
@@ -19,6 +19,8 @@ class Content extends Component{
         previous: '',
         data: [],
       },
+      chosenItem: [],
+      itemProperties: []
     }
   }
 
@@ -86,10 +88,34 @@ class Content extends Component{
     });
   }
 
+  handleOpenClick(i){
+    let j = Object.values(i);
+    let p = Object.keys(i);
+    let element = document.getElementById('toggle');
+    let modal = document.getElementById('modal-wrapper');
+
+    this.setState({
+      chosenItem: j,
+      itemProperties: p
+    });
+    
+    modal.classList.toggle('open');
+    element.classList.toggle('blur');
+  }
+
+  handleCloseClick(e){
+    e.preventDefault();
+    let element = document.getElementById('toggle');
+    let modal = document.getElementById('modal-wrapper');
+
+    modal.classList.toggle('open');
+    element.classList.toggle('blur');
+  }
+
   render(){
     if(this.props.categoryChosen === '' || this.props.categoryChosen === undefined){
       return (
-        <div>PAGE INFO</div>
+        <div className = 'content'>PAGE INFO</div>
       )
     }
     else if(!this.state.isLoaded){
@@ -99,32 +125,40 @@ class Content extends Component{
     }
     else{
       return (
-        <div className = 'App'>
-          <div 
-            className = 'left-arrow'
-            onClick = {() => {this.fetchData(this.state.category.previous)}}
-          >
-            <img src={logo1} alt="prevPage"/>
+        <div className = 'content'>
+          <div id = 'toggle' className = 'content-list'>
+            <div 
+              className = 'left-arrow'
+              onClick = {() => {this.fetchData(this.state.category.previous)}}
+            >
+              <img src={logo1} alt="prevPage"/>
+            </div>
+            <ul className = 'items-list'>
+              {
+                this.state.category.data.map((i) => (
+                  <li className = 'trigger' onClick = {() => this.handleOpenClick(i)} key = {i.name}>
+                    {i.name}
+                  </li>
+                  )
+                )
+              }
+            </ul>
+            <div 
+              className = 'right-arrow' 
+              onClick = {() => {this.fetchData(this.state.category.next)}}
+            >
+              <img src={logo2} alt="nextPage"/>
+            </div>
           </div>
-          <ul>
-            {
-              this.state.category.data.map((i) => (
-                <li key = {i.name}>
-                  {i.name}
-                </li>)
-              )
-            }
-          </ul>
-          <div 
-            className = 'right-arrow' 
-            onClick = {() => {this.fetchData(this.state.category.next)}}
-          >
-            <img src={logo2} alt="nextPage"/>
-          </div>
+          <Item chosenItem = {this.state.chosenItem} itemProperties = {this.state.itemProperties} onClick = {this.handleCloseClick}/>
         </div>
       )
     }
   }
 }
+
+/* return (<li className = 'item-link' onClick = {() => {}} key = {this.state.itemPropertys[index] + i}>
+            {this.state.itemPropertys[index] + ': ' + i}
+          </li>) */
 
 export default Content;
