@@ -3,6 +3,7 @@ import Item from './Item'
 import './Content.css';
 import logo1 from '../icons/if_lightsaber-luke-anh_1626625.svg';
 import logo2 from '../icons/if_lightsaber-luke-rotj_1626626.svg';
+import logoLoaging from '../icons/if_yoda_1626636.svg';
 
 let h = new Headers();
 h.append('Accept','application/json');
@@ -115,12 +116,16 @@ class Content extends Component{
   render(){
     if(this.props.categoryChosen === '' || this.props.categoryChosen === undefined){
       return (
-        <div className = 'content'>PAGE INFO</div>
+        <div className = 'content'>
+          PAGE INFO
+        </div>
       )
     }
     else if(!this.state.isLoaded){
       return(
-        <div className = 'loading'>Don't loaded</div>
+        <div className = 'content content-loading'>
+          <img src={logoLoaging} alt="loading icon" className = 'loading-icon'/>
+        </div>
       )  
     }
     else{
@@ -131,7 +136,7 @@ class Content extends Component{
               className = 'left-arrow'
               onClick = {() => {this.fetchData(this.state.category.previous)}}
             >
-              <img src={logo1} alt="prevPage"/>
+              <img id = 'bluesaber' src = {logo1} alt = "prevPage"/>
             </div>
             <ul className = 'items-list'>
               {
@@ -147,7 +152,7 @@ class Content extends Component{
               className = 'right-arrow' 
               onClick = {() => {this.fetchData(this.state.category.next)}}
             >
-              <img src={logo2} alt="nextPage"/>
+              <img id = 'greensaber' src = {logo2} alt = "nextPage"/>
             </div>
           </div>
           <Item chosenItem = {this.state.chosenItem} itemProperties = {this.state.itemProperties} onClick = {this.handleCloseClick}/>
@@ -156,9 +161,5 @@ class Content extends Component{
     }
   }
 }
-
-/* return (<li className = 'item-link' onClick = {() => {}} key = {this.state.itemPropertys[index] + i}>
-            {this.state.itemPropertys[index] + ': ' + i}
-          </li>) */
 
 export default Content;

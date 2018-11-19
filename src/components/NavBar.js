@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './NavBar.css';
-
+import icon from '../icons/if_darth-vader_1626615.svg';
 
 class NavBar extends Component{
   constructor(props){
@@ -20,30 +20,66 @@ class NavBar extends Component{
     });
   }
 
+  handleCategoryChoosing(){
+    this.setState({
+      isChosen: true
+    })
+    
+    let el = document.getElementById('input');
+    if(el.classList.contains('close')){
+      el.classList.toggle('close');
+      el.setAttribute('placeholder', 'Search in category' )
+      el.classList.toggle('open');
+    }
+      
+  }
+
+  handleIconClick(){
+    let el = document.getElementById('input');
+    if(this.state.isChosen > 0){
+      el.setAttribute('placeholder', 'Search in category' )
+      el.classList.toggle('open');
+    }
+    else{
+      el.setAttribute('placeholder', 'Choose category' )
+      el.classList.toggle('close');
+    } 
+  }
+
   render(){
     return (
       <div className = 'Navbar'>
-        <ul>
-          {this.props.categoryList.map((i) =>
+        <ul className = 'Nav-menu'>
+          {this.props.categoryList.map((i,index) =>
             <li 
             key = {i} 
-            onClick = {() => this.props.onClick(i)}>{i}</li>
+            id = {index}
+            className = 'Nav-menu-item'
+            onMouseUp = {() => {this.handleCategoryChoosing()}}
+            onClick = {() => this.props.onClick(i, index)}>{i}</li>
           )}
         </ul>
-        <form 
-        className="searchBar"
-        onSubmit = {() => this.props.onSubmit(this.state.e, this.state.inputValue)}
-        >
-          <input 
-            id = 'input'
-            type="text" 
-            placeholder = 'Search in category' 
-            className = 'SearchField'
-            onChange={e => this.updateInputValue(e)}
-             />
-          <button>Search</button>
-        </form>
-        
+        <div className="form-container">
+          <form 
+          className="search"
+          onSubmit = {() => this.props.onSubmit(this.state.e, this.state.inputValue)}
+          >
+            <img 
+              src={icon} 
+              alt="icon" 
+              className = 'search-icon' 
+              onClick = {() => this.handleIconClick()}
+            />
+            <input 
+              id = 'input'
+              type="text" 
+              
+              className = 'search-field'
+              onChange={e => this.updateInputValue(e)}
+            />
+            <span className = 'search-button'></span>
+          </form>
+        </div>
       </div>
     );
   }

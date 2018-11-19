@@ -2,16 +2,13 @@ import React, { Component } from 'react';
 import './Logo.css';
 import logo from '../icons/if_darth-maul_1626614.svg';
 
-
-
-
 function Logo(props){
 	return (
     <header className="logo-header">
-      <img src={logo} className="logo-logo" alt="logo" />
+      <a href="/"><img src={logo} className="logo-logo" alt="logo" /></a>
       <div className = 'logo-info'>
         <p className = 'logo-name'>
-            T-O-D-O
+          SWDB by
         </p>
         <a
           className="logo-link"
@@ -25,12 +22,5 @@ function Logo(props){
     </header>
 	);
 }
-
-
-
-
-
-
-
 
 export default Logo;

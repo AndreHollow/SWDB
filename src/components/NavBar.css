@@ -1,0 +1,79 @@
+.Navbar{
+  display: flex;
+  height: 10vh;
+  justify-content: space-between;
+  align-items: flex-end;
+  background: linear-gradient(#282c34, #555555);
+  margin: 0;
+  border: none;
+}
+
+.Nav-menu{
+  display: flex;
+  list-style: none;
+  width: 40vw;
+}
+
+.Nav-menu-item{
+  padding: 10px;
+  font-size: 22px;
+  font-weight: 600;
+  margin: 0  10px 0 0;
+  cursor: pointer;
+  text-shadow: 0 0 20px #921816;
+}
+
+.Nav-menu-item.chosen{
+  color: #fff;
+}
+
+
+
+.form-container{
+  width: 40vw;
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.search{
+  display: flex;
+  height: 6vh;
+  width: 30vw;
+  justify-content: flex-end;
+  align-items: center;
+  
+}
+
+.search-icon{
+  width: 6vh;
+  height: 6vw;
+  cursor: pointer;
+}
+
+.search-field{
+  width: 0px;
+  height: 4vh;
+  border: none;
+  font-size: 16px;
+  border-radius: 10px;
+  color: white;
+  font-weight: 600;
+  background-color: #aaa;
+  -webkit-transition: width 0.4s ease-in-out;
+  transition: width 0.4s ease-in-out;
+}
+
+.search-field.open{
+  padding-left: 10px;
+  width: 200px;
+}
+
+.search-field.close{
+  pointer-events:none;
+  padding-left: 10px;
+  width: 200px;
+  color: black;
+  background-color: #921816;
+}

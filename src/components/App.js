@@ -21,14 +21,21 @@ class App extends Component {
     }
   }
 
-  componentDidMount(){
-    
-  }
-
-  handleClick = (category) => {
+  handleClick = (category, index) => {
     this.setState({
       categoryChosen: category
     });
+    let chosen = document.getElementsByClassName('chosen');
+    let element = document.getElementById(index);
+    let temp;
+    if(chosen.length === 0){
+      element.classList.toggle('chosen');
+    }
+    else{
+      temp = document.getElementById(chosen[0].id);
+      temp.classList.toggle('chosen');
+      element.classList.toggle('chosen');
+    }
   }
 
   handleSubmit = (e, val) => {
@@ -45,7 +52,6 @@ class App extends Component {
       })
     }
   }
-
 
   render() {
     return (
@@ -71,6 +77,3 @@ class App extends Component {
 }
 
 export default App;
-
-
-//app have state for search and rerender searchbar anytime its changed and get search info then on submit changes the content via props
