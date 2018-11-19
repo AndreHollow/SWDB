@@ -6,6 +6,21 @@
   border: none;
 }
 
+.main-yoda-logo{
+  height: 25vh;
+  width: 25vw;
+}
+.content-main{
+  height: 40vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 500;
+  font-size: 18px;
+  text-align: left;
+  text-shadow: 0 0 20px #8b9e6c;
+}
+
 .content-loading{
   display: flex;
   justify-content: center;
@@ -13,7 +28,7 @@
 }
 
 .loading-icon{
-  animation: logo-spin infinite 2s linear;
+  animation: logo-spin infinite 1s linear;
   height: 15vh;
   margin: 20px;
 }

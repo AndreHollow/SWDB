@@ -5,8 +5,7 @@ import icon from '../icons/if_chewbacca_1626612.svg';
 function BottomLinks(props){
 	return (
 	  <footer className = 'footer'>
-			<img src={icon} alt="chewbacca" className = 'bottom-icon'/>
-			<div className = 'link'></div>
+		<div className = 'link'></div>
 		</footer>
 	);
 }

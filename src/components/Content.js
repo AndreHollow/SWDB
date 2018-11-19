@@ -4,6 +4,7 @@ import './Content.css';
 import logo1 from '../icons/if_lightsaber-luke-anh_1626625.svg';
 import logo2 from '../icons/if_lightsaber-luke-rotj_1626626.svg';
 import logoLoaging from '../icons/if_yoda_1626636.svg';
+import mainYoda from '../icons/yoda_1.svg';
 
 let h = new Headers();
 h.append('Accept','application/json');
@@ -117,7 +118,18 @@ class Content extends Component{
     if(this.props.categoryChosen === '' || this.props.categoryChosen === undefined){
       return (
         <div className = 'content'>
-          PAGE INFO
+          
+          <div className = 'content-main'>
+          <img src={mainYoda} alt="Yoda icon" className = 'main-yoda-logo'/>
+            Greetings, young Padawan. <br />
+            Welcome to the star wars universe. <br />
+            My name is Yoda the Grand Master of the Jedi Order. <br />
+            Here you can get more information about: people, planets, species, starships, vehicles.<br />
+            Just choose what interests you. <br />
+            You can also use search that will satisfy your interest in a certain category, <br />
+            you can find search bar under the mask of Darth Vader. <br />
+            Good luck to you, traveler, and may the force be with you. <br />
+          </div>
         </div>
       )
     }
