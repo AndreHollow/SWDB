@@ -1,7 +1,7 @@
 {
   "main.css": "/swbd/static/css/main.880e2a7e.chunk.css",
-  "main.js": "/swbd/static/js/main.eb26ae33.chunk.js",
-  "main.js.map": "/swbd/static/js/main.eb26ae33.chunk.js.map",
+  "main.js": "/swbd/static/js/main.1bc299f0.chunk.js",
+  "main.js.map": "/swbd/static/js/main.1bc299f0.chunk.js.map",
   "static/js/1.e21b30f1.chunk.js": "/swbd/static/js/1.e21b30f1.chunk.js",
   "static/js/1.e21b30f1.chunk.js.map": "/swbd/static/js/1.e21b30f1.chunk.js.map",
   "runtime~main.js": "/swbd/static/js/runtime~main.9ba14bee.js",
@@ -15,6 +15,6 @@
   "static/media/if_darth-vader_1626615.svg": "/swbd/static/media/if_darth-vader_1626615.b3bb8791.svg",
   "static/css/main.880e2a7e.chunk.css.map": "/swbd/static/css/main.880e2a7e.chunk.css.map",
   "index.html": "/swbd/index.html",
-  "precache-manifest.076fdc035db6f1318fb00834bb72c08a.js": "/swbd/precache-manifest.076fdc035db6f1318fb00834bb72c08a.js",
+  "precache-manifest.052b2a45e98d55c8253b7b9c9c6a428a.js": "/swbd/precache-manifest.052b2a45e98d55c8253b7b9c9c6a428a.js",
   "service-worker.js": "/swbd/service-worker.js"
 }
