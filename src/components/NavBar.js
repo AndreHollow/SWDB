@@ -26,6 +26,8 @@ class NavBar extends Component{
       isChosen: true
     })
     
+    let nav = document.getElementById('Nav-menu');
+    nav.classList.toggle('open');
     let el = document.getElementById('input');
     if(el.classList.contains('close')){
       el.classList.toggle('close');
