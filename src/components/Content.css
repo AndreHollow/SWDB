@@ -10,6 +10,7 @@
   height: 25vh;
   width: 25vw;
 }
+
 .content-main{
   height: 40vh;
   display: flex;
@@ -98,11 +99,16 @@
 
 .items-list{
   width: 50vw;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
   margin-left: 0;
   padding-left: 0;
 }
 
 .trigger{
+  width: 100%;
   list-style-type: none;
   cursor: pointer;
   font-size: 22px;
@@ -113,7 +119,6 @@
 .trigger:hover{
   color: #921816;
   filter: invert(100%);
-  z-index: -1;
 }
 
 @keyframes logo-spin {
@@ -146,5 +151,53 @@
   }
   to {
     transform: translateX(0px);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .content{
+    height: 75vh;
+  }
+
+  .main-yoda-logo{
+    display: none;
+  }
+
+  .content-main{
+    height: 75vh;
+    padding: 20px;
+    align-items: flex-start;
+  }
+
+  .content-list{
+    height: 75vh;
+  }
+
+  .items-list{
+    width: 80vw;
+  }
+
+  .left-arrow{
+    margin: 0 10px 0 0;
+    width: 5vw;
+  }
+
+  #greensaber{ 
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg);
+  }
+
+  .right-arrow{
+    margin: 0 20px 0 0;
+    width: 5vw;
+  }
+
+  #bluesaber{
+    -webkit-transform:rotate(0deg);
+    -moz-transform:rotate(0deg);
+    -o-transform:rotate(0deg);
+    transform:rotate(0deg);
   }
 }

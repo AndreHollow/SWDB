@@ -44,12 +44,16 @@
   background: #fff; 
 }
 
-.btn-close{
+div.btn-close{
   width:32px;
   height:32px;
-  margin: 20px;
+  margin:15px 15px 0 0 ;
   display:block;
   float:right;
+}
+
+.btn-close:hover{
+  background-color: #921816;
 }
 
 .btn-close::before, .btn-close::after{
@@ -78,6 +82,7 @@
 
 .info-list{
   display: flex;
+  padding-left: 20px;
   flex-flow: column nowrap;
   justify-content: center;
   align-items: flex-start;
@@ -90,4 +95,11 @@
 
 .item-data{
   font-weight: 600;
+}
+
+
+@media screen and (max-width: 767px) {
+  .info-list{
+    padding-left: 10px;
+  }
 }

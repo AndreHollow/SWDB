@@ -5,7 +5,9 @@ import logo from '../icons/if_darth-maul_1626614.svg';
 function Logo(props){
 	return (
     <header className="logo-header">
-      <a href="/"><img src={logo} className="logo-logo" alt="logo" /></a>
+      <a href="https://andrehollow.github.io/swbd/">
+        <img src={logo} className="logo-logo" alt="logo" />
+      </a>
       <div className = 'logo-info'>
         <p className = 'logo-name'>
           SWDB by

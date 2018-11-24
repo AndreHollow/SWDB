@@ -65,8 +65,10 @@ class Content extends Component{
 
   fetchData = (props) =>
   {
-    if(props === null)
-      return
+    if(props === null) return
+    this.setState({
+      isLoaded: false
+    });
     fetch(this.defineReq(props))
       .then(
         res => {
@@ -120,15 +122,16 @@ class Content extends Component{
         <div className = 'content'>
           
           <div className = 'content-main'>
-          <img src={mainYoda} alt="Yoda icon" className = 'main-yoda-logo'/>
-            Greetings, young Padawan. <br />
-            Welcome to the star wars universe. <br />
-            My name is Yoda the Grand Master of the Jedi Order. <br />
-            Here you can get more information about: people, planets, species, starships, vehicles.<br />
-            Just choose what interests you. <br />
-            You can also use search that will satisfy your interest in a certain category, <br />
-            you can find search bar under the mask of Darth Vader. <br />
-            Good luck to you, traveler, and may the force be with you. <br />
+            <img src={mainYoda} alt="Yoda icon" className = 'main-yoda-logo'/>
+            <p>Greetings, young Padawan. <br />
+              Welcome to the star wars universe. <br />
+              My name is Yoda the Grand Master of the Jedi Order. <br />
+              Here you can get more information about: people, planets, species, starships, vehicles.<br />
+              Just choose what interests you. <br />
+              You can also use search that will satisfy your interest in a certain category, <br />
+              you can find search bar under the mask of Darth Vader. <br />
+              Good luck to you, traveler, and may the force be with you. <br />
+            </p>
           </div>
         </div>
       )

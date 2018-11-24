@@ -6,9 +6,9 @@ function Item (props){
     <div id = 'modal-wrapper' className = 'modal-wrapper'>
       <div className="modal">
         <div className = 'modal-item-content'>
-          <a
+          <div
           className = "btn-close trigger" 
-          onClick = {(e) => props.onClick(e)}></a>
+          onClick = {(e) => props.onClick(e)}></div>
           <ul className = 'info-list'>
           {
             props.chosenItem.map((i, index) => {
@@ -16,9 +16,11 @@ function Item (props){
               else if(props.itemProperties[index].includes('created')
                    || props.itemProperties[index] === 'edited') return
               else{
-                return (<li className = 'item-field'  key = {props.itemProperties[index] + i}>
-                  {props.itemProperties[index] + ': '}<span className = 'item-data'>{i}</span>
-                </li>)
+                return (
+                  <li className = 'item-field'  key = {props.itemProperties[index] + i}>
+                    {props.itemProperties[index] + ': '}<span className = 'item-data'>{i}</span>
+                  </li>
+                )
               }
             })
           }

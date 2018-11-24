@@ -6,3 +6,9 @@
 .bottom-icon{
   height: 15vh;
 }
+
+@media screen and (max-width: 767px) {
+  .footer{
+    display: none;
+  }
+}

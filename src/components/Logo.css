@@ -1,6 +1,6 @@
 .logo-header {
   background-color: #282c34;
-  min-height: 20vh;
+  height: 20vh;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -36,5 +36,15 @@
   }
   to {
     transform: rotate(360deg);
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo-header{
+    height: 15vh;
+  }
+  
+  .logo-logo{
+    height: 13vh;
   }
 }
